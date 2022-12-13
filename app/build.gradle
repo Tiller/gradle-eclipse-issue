@@ -1,0 +1,25 @@
+
+plugins {
+   id 'java'
+   id 'war'
+   id 'eclipse'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+   providedCompile 'jakarta.platform:jakarta.jakartaee-api:10.0.0'
+   
+   implementation project(':lib')
+}
+
+compileJava {
+   targetCompatibility = '11'
+   sourceCompatibility = '11'
+}
+
+war {
+   archiveName 'demoservlet.war'
+}
